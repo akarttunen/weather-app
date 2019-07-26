@@ -2,7 +2,7 @@
   background-color: #ffffff;
   border-radius: 5px;
   border: 1px solid #e6e6e6;
-  margin: 5px 5px 5px 0px;
+  margin: 5px 2px 5px 0px;
   text-align: center;
   width: 24%;
 }
@@ -11,7 +11,7 @@
   background-color: #ffffff;
   border-radius: 5px;
   border: 1px solid #e6e6e6;
-  margin: 5px;
+  margin: 5px 2px 5px 2px;
   text-align: center;
   width: 24%;
 }
@@ -20,7 +20,7 @@
   background-color: #ffffff;
   border-radius: 5px;
   border: 1px solid #e6e6e6;
-  margin: 5px;
+  margin: 5px 2px 5px 2px;
   text-align: center;
   width: 24%;
 }
@@ -29,7 +29,7 @@
   background-color: #ffffff;
   border-radius: 5px;
   border: 1px solid #e6e6e6;
-  margin: 5px;
+  margin: 5px 2px 5px 2px;
   text-align: center;
   width: 24%;
 }
@@ -38,7 +38,7 @@
   background-color: #ffffff;
   border-radius: 5px;
   border: 1px solid #e6e6e6;
-  margin: 5px 0px 5px 5px;
+  margin: 5px 0px 5px 2px;
   text-align: center;
   width: 24%;
 }
@@ -50,6 +50,7 @@
 
 .small-time {
   font-size: 13pt;
+  color: #70757a;
 }
 
 .small-icon {
@@ -64,14 +65,21 @@
 
 .small-wind {
   margin-bottom: 1px;
+  margin-top: 3px;
+  color: #70757a;
+  font-size: 10pt;
 }
 
 .small-humid {
   margin-top: 1px;
   margin-bottom: 1px;
+  color: #70757a;
+  font-size: 10pt;
 }
 
 .small-precip {
   margin-top: 1px;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
+  color: #70757a;
+  font-size: 10pt;
 }

@@ -16,9 +16,8 @@ const Weather = (props) => {
   if (props.weatherNow.length === 0) {
     return <p>Loading...</p>;
   } else {
-    console.log(props.weatherNow);
     const date = new Date(props.weatherNow[0].dt * 1000);
-
+    console.log(props);
     return (
       <div className="flex-container">
         <div className="card">
@@ -40,9 +39,11 @@ const Weather = (props) => {
             <p className="timeNow">{date.toLocaleTimeString([ 'fi-Fi' ], timeOptions)}</p>
           </div>
           <div className="detailsContainer">
-            <p className="detail">Wind: {props.weatherNow[0].wind.speed} m/s</p>
-            <p className="detail">Humidity: {props.weatherNow[0].main.humidity}%</p>
-            <div className="detail">Precipitation(3 h): {idx(props, (_) => _.weatherNow[0].rain['3h']) || 0} mm</div>
+            <div className="detail">
+              Wind: {props.weatherNow[0].wind.speed} m/s<br />
+              Humidity: {props.weatherNow[0].main.humidity}%<br />
+              Precipitation(3 h): {idx(props, (_) => _.weatherNow[0].rain['3h']) || 0} mm
+            </div>
           </div>
         </div>
 

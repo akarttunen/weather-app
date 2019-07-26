@@ -14,6 +14,8 @@
 
 .card {
   max-width: 600px;
+  display: -moz-box;
+  display: -webkit-flex;
   display: flex;
   flex-wrap: wrap;
   align-content: space-between;
@@ -68,6 +70,9 @@
   font-size: 13pt;
   color: #70757a;
   margin: 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 .cityContainer {
@@ -86,14 +91,15 @@
 }
 
 .dateContainer {
-  flex: 50%;
+  flex: auto;
   height: auto;
   min-width: 140px;
 }
 
 .detailsContainer {
-  flex: 50%;
+  flex: 60%;
   height: auto;
   text-align: right;
   min-width: 140px;
+  position: relative;
 }

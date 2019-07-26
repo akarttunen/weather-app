@@ -14,7 +14,6 @@ const timeOptions = {
 const SmallWeatherBox = (props) => {
   const { timeId } = props;
   const boxClass = `box${timeId}`;
-  //console.log(props.weatherForecast[0].list[timeId]);
   if (props.weatherForecast.length === 0) {
     return null;
   } else {
