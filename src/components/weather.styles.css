@@ -1,0 +1,99 @@
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.smallbox {
+  max-width: 700px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: space-between;
+  margin: 5px 15px 5px 15px;
+}
+
+.card {
+  max-width: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  background-color: #ffffff;
+  padding: 20px;
+  border: 1px solid #e6e6e6;
+  margin: 5px 15px 5px 15px;
+  border-radius: 5px;
+}
+
+.cityName {
+  font-size: 19pt;
+  color: #262626;
+  margin-bottom: 2px;
+  margin-top: 2px;
+}
+
+.weatherInfo {
+  margin-top: 2px;
+  font-size: 13pt;
+  color: #70757a;
+}
+.weatherIcon {
+  float: right;
+  width: auto;
+  height: 60%;
+  max-width: 100px;
+}
+
+.temp {
+  font-size: 26pt;
+  color: #262626;
+  align-self: center;
+  text-align: right;
+  margin-top: 2px;
+}
+
+.date {
+  font-size: 15pt;
+  color: #262626;
+  margin-bottom: 2px;
+}
+
+.timeNow {
+  font-size: 13pt;
+  color: #70757a;
+  margin-top: 2px;
+  margin: 0;
+}
+
+.detail {
+  font-size: 13pt;
+  color: #70757a;
+  margin: 0;
+}
+
+.cityContainer {
+  flex: 50%;
+  height: 100px;
+  min-width: 140px;
+}
+.weatherContainer {
+  flex: 50%;
+  height: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: flex-end;
+  min-width: 140px;
+}
+
+.dateContainer {
+  flex: 50%;
+  height: auto;
+  min-width: 140px;
+}
+
+.detailsContainer {
+  flex: 50%;
+  height: auto;
+  text-align: right;
+  min-width: 140px;
+}

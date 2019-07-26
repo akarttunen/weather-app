@@ -1,0 +1,77 @@
+.box0 {
+  background-color: #ffffff;
+  border-radius: 5px;
+  border: 1px solid #e6e6e6;
+  margin: 5px 5px 5px 0px;
+  text-align: center;
+  width: 24%;
+}
+
+.box1 {
+  background-color: #ffffff;
+  border-radius: 5px;
+  border: 1px solid #e6e6e6;
+  margin: 5px;
+  text-align: center;
+  width: 24%;
+}
+
+.box2 {
+  background-color: #ffffff;
+  border-radius: 5px;
+  border: 1px solid #e6e6e6;
+  margin: 5px;
+  text-align: center;
+  width: 24%;
+}
+
+.box3 {
+  background-color: #ffffff;
+  border-radius: 5px;
+  border: 1px solid #e6e6e6;
+  margin: 5px;
+  text-align: center;
+  width: 24%;
+}
+
+.box4 {
+  background-color: #ffffff;
+  border-radius: 5px;
+  border: 1px solid #e6e6e6;
+  margin: 5px 0px 5px 5px;
+  text-align: center;
+  width: 24%;
+}
+.small-details {
+  background-color: #e5f6fd;
+  font-size: 10pt;
+  padding: 3px;
+}
+
+.small-time {
+  font-size: 13pt;
+}
+
+.small-icon {
+  width: 100%;
+  height: auto;
+}
+
+.small-temp {
+  font-size: 15pt;
+  margin: 3px 0px 3px 0px;
+}
+
+.small-wind {
+  margin-bottom: 1px;
+}
+
+.small-humid {
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+
+.small-precip {
+  margin-top: 1px;
+  margin-bottom: 5px;
+}
