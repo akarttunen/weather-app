@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import idx from 'idx';
+import * as R from 'ramda';
 
 import { calCelsius } from '../utilities';
 import SmallWeatherBox from './smallWeatherBox';
@@ -13,26 +14,29 @@ const timeOptions = {
 };
 
 const Weather = (props) => {
-  if (props.weatherNow.length === 0) {
+  const value = parseInt(props.value);
+  const weatherObj = R.find(R.propEq('id', value))(props.weatherNow);
+  if (weatherObj === undefined) {
     return <p>Loading...</p>;
   } else {
-    const date = new Date(props.weatherNow[0].dt * 1000);
     console.log(props);
+
+    const date = new Date(weatherObj.dt * 1000);
     return (
       <div className="flex-container">
         <div className="card">
           <div className="cityContainer">
-            <p className="cityName">{props.weatherNow[0].name}</p>
-            <p className="weatherInfo">{props.weatherNow[0].weather[0].description}</p>
+            <p className="cityName">{weatherObj.name}</p>
+            <p className="weatherInfo">{weatherObj.weather[0].description}</p>
           </div>
           <div className="weatherContainer">
             <img
               className="weatherIcon"
-              src={`http://openweathermap.org/img/wn/${props.weatherNow[0].weather[0].icon}@2x.png`}
+              src={`http://openweathermap.org/img/wn/${weatherObj.weather[0].icon}@2x.png`}
               alt="weather icon"
             />
 
-            <div className="temp"> {calCelsius(props.weatherNow[0].main.temp)}&deg;C</div>
+            <div className="temp"> {calCelsius(weatherObj.main.temp)}&deg;C</div>
           </div>
           <div className="dateContainer">
             <p className="date">{date.toLocaleDateString([ 'fi-Fi' ])}</p>
@@ -40,9 +44,9 @@ const Weather = (props) => {
           </div>
           <div className="detailsContainer">
             <div className="detail">
-              Wind: {props.weatherNow[0].wind.speed} m/s<br />
-              Humidity: {props.weatherNow[0].main.humidity}%<br />
-              Precipitation(3 h): {idx(props, (_) => _.weatherNow[0].rain['3h']) || 0} mm
+              Wind: {weatherObj.wind.speed} m/s<br />
+              Humidity: {weatherObj.main.humidity}%<br />
+              Precipitation(3 h): {idx(props, (_) => _.weatherObj.rain['3h']) || 0} mm
             </div>
           </div>
         </div>

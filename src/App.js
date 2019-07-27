@@ -6,8 +6,6 @@ import './App.css';
 import { fetchWeatherForecast, fetchWeatherNow, fetchMultipleWeatherNow } from './actions';
 import Weather from './components/weather';
 
-const cityIds = [ 658225, 655195, 650225, 634964 ];
-
 class App extends Component {
   constructor() {
     super();
@@ -17,19 +15,28 @@ class App extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  componentDidUpdate = () => {
-    console.log(this.props);
+  componentDidMount = () => {
+    this.fetchData();
   };
 
   handleChange(event) {
     this.setState({ value: event.target.value });
+    this.fetchData();
+  }
 
-    if (event.target.value === 'all') {
-      this.props.FetchMultipleWeatherNow(cityIds);
-      console.log('pylly');
+  fetchData() {
+    if (this.state.value === 'all') {
+      this.props.FetchWeatherForecast('658225');
+      this.props.FetchWeatherForecast('655195');
+      this.props.FetchWeatherForecast('650225');
+      this.props.FetchWeatherForecast('634964');
+      this.props.FetchWeatherNow('658225');
+      this.props.FetchWeatherNow('655195');
+      this.props.FetchWeatherNow('650225');
+      this.props.FetchWeatherNow('634964');
     } else {
-      this.props.FetchWeatherForecast(event.target.value);
-      this.props.FetchWeatherNow(event.target.value);
+      this.props.FetchWeatherForecast(this.state.value);
+      this.props.FetchWeatherNow(this.state.value);
     }
   }
 
@@ -49,7 +56,18 @@ class App extends Component {
             <option value="634964">Tampere</option>
           </select>
         </div>
-        <div className="wrapper">{value === 'kaikki' ? null : <Weather value={this.state.value} />}</div>
+        <div className="wrapper">
+          {value === 'all' ? (
+            <div>
+              <Weather value={'658225'} />
+              <Weather value={'655195'} />
+              <Weather value={'650225'} />
+              <Weather value={'634964'} />
+            </div>
+          ) : (
+            <Weather value={this.state.value} />
+          )}
+        </div>
       </div>
     );
   }
