@@ -3,14 +3,16 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import './App.css';
 
-import { fetchWeatherForecast, fetchWeatherNow } from './actions';
+import { fetchWeatherForecast, fetchWeatherNow, fetchMultipleWeatherNow } from './actions';
 import Weather from './components/weather';
+
+const cityIds = [ 658225, 655195, 650225, 634964 ];
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      value: 'kaikki'
+      value: 'all'
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -21,8 +23,14 @@ class App extends Component {
 
   handleChange(event) {
     this.setState({ value: event.target.value });
-    this.props.FetchWeatherForecast(event.target.value);
-    this.props.FetchWeatherNow(event.target.value);
+
+    if (event.target.value === 'all') {
+      this.props.FetchMultipleWeatherNow(cityIds);
+      console.log('pylly');
+    } else {
+      this.props.FetchWeatherForecast(event.target.value);
+      this.props.FetchWeatherNow(event.target.value);
+    }
   }
 
   render() {
@@ -34,14 +42,14 @@ class App extends Component {
         </header>
         <div className="selectDiv">
           <select className="custom-select" value={this.state.value} onChange={this.handleChange}>
-            <option value="kaikki">Kaikki</option>
+            <option value="all">Kaikki</option>
             <option value="658225">Helsinki</option>
             <option value="655195">Jyväskylä</option>
             <option value="650225">Kuopio</option>
             <option value="634964">Tampere</option>
           </select>
         </div>
-        <div className="wrapper">{value === 'kaikki' ? null : <Weather />}</div>
+        <div className="wrapper">{value === 'kaikki' ? null : <Weather value={this.state.value} />}</div>
       </div>
     );
   }
@@ -55,7 +63,14 @@ function mapStateToProps(state) {
 }
 
 function matchDispatchToProps(dispatch) {
-  return bindActionCreators({ FetchWeatherForecast: fetchWeatherForecast, FetchWeatherNow: fetchWeatherNow }, dispatch);
+  return bindActionCreators(
+    {
+      FetchWeatherForecast: fetchWeatherForecast,
+      FetchWeatherNow: fetchWeatherNow,
+      FetchMultipleWeatherNow: fetchMultipleWeatherNow
+    },
+    dispatch
+  );
 }
 
 export default connect(mapStateToProps, matchDispatchToProps)(App);
