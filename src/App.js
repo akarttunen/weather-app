@@ -47,16 +47,17 @@ class App extends Component {
         <header className="App-header">
           <p className="headerText">Säätutka</p>
         </header>
-        <div className="selectDiv">
-          <select className="custom-select" value={this.state.value} onChange={this.handleChange}>
-            <option value="all">Kaikki</option>
-            <option value="658225">Helsinki</option>
-            <option value="655195">Jyväskylä</option>
-            <option value="650225">Kuopio</option>
-            <option value="634964">Tampere</option>
-          </select>
-        </div>
         <div className="wrapper">
+          <div className="selectDiv">
+            <select className="custom-select" value={this.state.value} onChange={this.handleChange}>
+              <option value="all">Kaikki</option>
+              <option value="658225">Helsinki</option>
+              <option value="655195">Jyväskylä</option>
+              <option value="650225">Kuopio</option>
+              <option value="634964">Tampere</option>
+            </select>
+          </div>
+
           {value === 'all' ? (
             <div>
               <Weather value={'658225'} />

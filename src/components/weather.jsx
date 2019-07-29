@@ -15,6 +15,9 @@ const timeOptions = {
 
 const Weather = (props) => {
   const value = parseInt(props.value);
+  const firstLetterUp = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
   const weatherObj = R.find(R.propEq('id', value))(props.weatherNow);
   if (weatherObj === undefined) {
     return <p>Loading...</p>;
@@ -25,7 +28,7 @@ const Weather = (props) => {
         <div className="card">
           <div className="cityContainer">
             <p className="cityName">{weatherObj.name}</p>
-            <p className="weatherInfo">{weatherObj.weather[0].description}</p>
+            <p className="weatherInfo">{firstLetterUp(weatherObj.weather[0].description)}</p>
           </div>
           <div className="weatherContainer">
             <img
