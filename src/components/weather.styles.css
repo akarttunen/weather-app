@@ -5,10 +5,10 @@
 }
 
 .smallbox {
-  max-width: 700px;
+  max-width: 600px;
+  flex-basis: 600px;
   display: flex;
   flex-wrap: nowrap;
-  align-content: space-between;
   margin: 5px 15px 5px 15px;
 }
 
