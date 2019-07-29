@@ -15,7 +15,6 @@ const SmallWeatherBox = (props) => {
   const { timeId, value, weatherForecast } = props;
 
   const weatherObj = weatherForecast.find((x) => x.city.id === value);
-  console.log(weatherObj);
   const boxClass = `box${timeId}`;
   if (weatherObj === undefined) {
     return null;
