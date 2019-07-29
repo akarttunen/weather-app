@@ -14,8 +14,6 @@
 
 .card {
   max-width: 600px;
-  display: -moz-box;
-  display: -webkit-flex;
   display: flex;
   flex-wrap: wrap;
   align-content: space-between;

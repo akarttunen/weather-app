@@ -19,8 +19,6 @@ const Weather = (props) => {
   if (weatherObj === undefined) {
     return <p>Loading...</p>;
   } else {
-    console.log(props);
-
     const date = new Date(weatherObj.dt * 1000);
     return (
       <div className="flex-container">
@@ -52,11 +50,11 @@ const Weather = (props) => {
         </div>
 
         <div className="smallbox">
-          <SmallWeatherBox timeId={0} />
-          <SmallWeatherBox timeId={1} />
-          <SmallWeatherBox timeId={2} />
-          <SmallWeatherBox timeId={3} />
-          <SmallWeatherBox timeId={4} />
+          <SmallWeatherBox timeId={0} value={value} />
+          <SmallWeatherBox timeId={1} value={value} />
+          <SmallWeatherBox timeId={2} value={value} />
+          <SmallWeatherBox timeId={3} value={value} />
+          <SmallWeatherBox timeId={4} value={value} />
         </div>
       </div>
     );

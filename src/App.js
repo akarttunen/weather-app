@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import './App.css';
 
-import { fetchWeatherForecast, fetchWeatherNow, fetchMultipleWeatherNow } from './actions';
+import { fetchWeatherForecast, fetchWeatherNow } from './actions';
 import Weather from './components/weather';
 
 class App extends Component {
@@ -84,8 +84,7 @@ function matchDispatchToProps(dispatch) {
   return bindActionCreators(
     {
       FetchWeatherForecast: fetchWeatherForecast,
-      FetchWeatherNow: fetchWeatherNow,
-      FetchMultipleWeatherNow: fetchMultipleWeatherNow
+      FetchWeatherNow: fetchWeatherNow
     },
     dispatch
   );

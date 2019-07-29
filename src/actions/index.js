@@ -34,18 +34,3 @@ export function fetchWeatherNow(cityID) {
       });
   };
 }
-
-export function fetchMultipleWeatherNow(cityIds) {
-  const url = `${ROOT_URL}group?id=${cityIds.join()}&appid=${API_KEY}`;
-
-  return function(dispatch) {
-    axios
-      .get(url)
-      .then((response) => {
-        dispatch({ type: 'FETCH_MULTIPLE_WEATHER', payload: response.data });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-}
