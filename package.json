@@ -6,8 +6,6 @@
     "axios": "^0.19.0",
     "babel-plugin-idx": "^2.4.0",
     "idx": "^2.5.6",
-    "lodash": "^4.17.15",
-    "lodash.template": "^4.5.0",
     "ramda": "^0.26.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
